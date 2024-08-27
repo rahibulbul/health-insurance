@@ -1,0 +1,101 @@
+.login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 800px;
+    height: 700px;
+    margin: auto;
+    box-shadow: 0px 25px 80px rgba(0, 0, 0, 0.15);
+}
+
+.login-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-components {
+    width: 400px;
+    font-family: var(--font-Poppins);
+
+}
+
+.form-check-forget {
+    margin-top: 20px;
+    width: 380px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 15px;
+
+    .form-check {
+        display: flex;
+        align-items: center;
+
+        input[type=checkbox] {
+            margin-right: 5px;
+            color: #696969;
+        }
+
+        label {
+            color: #696969;
+            font-weight: 500;
+            cursor: pointer;
+            transition: 0.6s;
+
+            &:hover {
+                color: black;
+            }
+        }
+    }
+
+    .form-forget {
+        display: flex;
+        align-items: center;
+
+        .forget-pass {
+            color: #696969;
+            font-weight: 500;
+            transition: 0.6s;
+
+            &:hover {
+                color: black;
+            }
+        }
+    }
+}
+
+.registration-link-login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 500px;
+    gap: 10px;
+    font-size: 15px;
+    margin-top: 20px;
+
+    span {
+        color: #696969;
+        font-weight: 500;
+        cursor: pointer;
+        transition: 0.6s;
+    }
+
+    .register-link {
+        color: #696969;
+        font-weight: 600;
+        transition: 0.6s;
+
+        &:hover {
+            color: black;
+        }
+    }
+}
