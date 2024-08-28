@@ -160,7 +160,7 @@
         justify-content: center;
     }
 
-    span:hover {
+    .emp-notify-control-panel-option:hover {
         background-color: #7775c8;
         color: white;
     }

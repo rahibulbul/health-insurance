@@ -66,7 +66,8 @@
 // };
 
 // export default EmpHeader;
-import React, { useState } from "react";
+
+import React, { useState, useEffect, useRef } from "react";
 import HeaderLogo from "../../assets/img/protection.png";
 import "./style.css";
 
@@ -74,6 +75,10 @@ const EmpHeader = () => {
   const [isNotificationOpen, setNotificationOpen] = useState(false);
   const [isUserOpen, setUserOpen] = useState(false);
   const [isControlPanelOpen, setControlPanelOpen] = useState(false);
+
+  const notificationRef = useRef(null);
+  const userRef = useRef(null);
+  const controlPanelRef = useRef(null);
 
   const handleNotificationClick = () => {
     setNotificationOpen(!isNotificationOpen);
@@ -92,6 +97,32 @@ const EmpHeader = () => {
     setControlPanelOpen(!isControlPanelOpen);
   };
 
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        notificationRef.current &&
+        !notificationRef.current.contains(event.target)
+      ) {
+        setNotificationOpen(false);
+      }
+      if (userRef.current && !userRef.current.contains(event.target)) {
+        setUserOpen(false);
+      }
+      if (
+        controlPanelRef.current &&
+        !controlPanelRef.current.contains(event.target)
+      ) {
+        setControlPanelOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
   return (
     <header className="emp-dash-header">
       <div className="title">
@@ -109,26 +140,29 @@ const EmpHeader = () => {
             onClick={handleNotificationClick}
           ></i>
           {isNotificationOpen && (
-            <div className="emp-notify-panel notification">
+            <div
+              className="emp-notify-panel notification"
+              ref={notificationRef}
+            >
               <div className="emp-notify-panel-title">Notifications</div>
               <div className="emp-notify-panel-content-group">
                 <div className="emp-notify-panel-content">
                   <div className="emp-notify-panel-content-head">
                     <span className="emp-notify-content-title">
-                      You got a email
+                      You got an email
                     </span>
-                    <div className="emp-notify-control">
+                    <div className="emp-notify-control" ref={controlPanelRef}>
                       <i
                         className="fa-solid fa-ellipsis"
                         onClick={handleEllipsisClick}
                       ></i>
                       {isControlPanelOpen && (
                         <div className="emp-notify-control-panel">
-                          <span className="emp-notify-control-panel-erase">
+                          <span className="emp-notify-control-panel-erase emp-notify-control-panel-option">
                             <i className="fa-regular fa-trash-can control-panel-icon"></i>
                             Erase this notification
                           </span>
-                          <span className="emp-notify-control-panel-stop">
+                          <span className="emp-notify-control-panel-stop emp-notify-control-panel-option">
                             <i className="fa-regular fa-bell-slash control-panel-icon"></i>
                             Turn off this notification
                           </span>
@@ -159,7 +193,7 @@ const EmpHeader = () => {
             onClick={handleUserClick}
           ></i>
           {isUserOpen && (
-            <div className="emp-notify-panel user">
+            <div className="emp-notify-panel user" ref={userRef}>
               <div className="emp-notify-panel-title">User</div>
             </div>
           )}
