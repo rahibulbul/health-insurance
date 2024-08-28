@@ -119,12 +119,15 @@ const Register = () => {
             <div className="reg-form-group">
               <div className="reg-form-component">
                 <ValidatePassword
-                  label="Enter your password"
+                  label="Enter Main Password"
                   value={password}
                   setValue={handlePasswordChange}
-                  errorMessage="Please enter a valid password."
+                  errorMessage="Passwords do not match."
                   requiredMessage="Password cannot be empty."
                   passwordsMatch={passwordsMatch && password.length > 0}
+                  showMismatchError={
+                    !passwordsMatch && confirmPassword.length > 0
+                  }
                 />
               </div>
               <div className="reg-form-component">
@@ -136,6 +139,9 @@ const Register = () => {
                   errorMessage="Passwords do not match."
                   requiredMessage="Password cannot be empty."
                   passwordsMatch={passwordsMatch && confirmPassword.length > 0}
+                  showMismatchError={
+                    !passwordsMatch && confirmPassword.length > 0
+                  }
                 />
               </div>
             </div>

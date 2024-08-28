@@ -1,0 +1,196 @@
+.emp-dash-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 65px;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--font-Poppins);
+    transition: 0.6s;
+    z-index: 99999;
+    box-shadow: 0px 25px 80px rgba(0, 0, 0, 0.15);
+}
+
+.emp-header-logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    width: 300px;
+    border-right: solid 1px #B2BEB5;
+
+    img {
+        display: block;
+        width: 45px;
+        height: 45px;
+        transition: filter 0.2s ease-in-out;
+        filter: grayscale(100%);
+        margin-right: 15px;
+
+        &:hover {
+            filter: grayscale(0%);
+        }
+    }
+
+    .title {
+        font-size: 25px;
+        font-weight: 700;
+        color: #36454F;
+        transition: 0.6s all;
+
+        .title-red {
+            color: #e74c3c;
+            transition: 0.6s all;
+
+            &:hover {
+                color: red;
+            }
+        }
+
+        &:hover {
+            color: black;
+        }
+    }
+}
+
+.emp-dash-header ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-right: 30px;
+    position: relative;
+}
+
+.emp-dash-header ul li {
+    margin-right: 30px;
+    position: relative;
+    color: #606060;
+
+    .notify-icon {
+        display: block;
+        border: solid 2px #B2BEB5;
+        padding: 10px;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: 0.6s;
+
+        &:hover {
+            border: solid 2px transparent;
+            color: white;
+            background-color: #4b49ac;
+        }
+    }
+}
+
+.emp-notify-panel {
+    position: absolute;
+    box-sizing: content-box;
+    width: 430px;
+    height: 520px;
+    right: 0;
+    background-color: white;
+    box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.2);
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    .emp-notify-panel-title {
+        padding: 15px 20px;
+        position: fixed;
+        width: 430px;
+        font-size: 18px;
+        font-weight: 600;
+        color: black;
+        border-bottom: solid 1px #B2BEB5;
+    }
+
+    .emp-notify-panel-content-group {
+        margin-top: 55px;
+    }
+
+    .emp-notify-panel-content {
+        padding: 10px 20px;
+        text-align: justify;
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+        transition: 0.6s;
+    }
+
+    .emp-notify-panel-content-head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .emp-notify-content-title {
+        font-size: 15px;
+        font-weight: 500;
+        color: black;
+        transition: 0.6s;
+    }
+
+    .emp-notify-control-panel {
+        position: absolute;
+        right: 0;
+        background-color: white;
+        width: 250px;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .emp-notify-control-panel span {
+        padding: 10px;
+        font-size: 15px;
+        color: black;
+        display: flex;
+        align-items: center;
+        transition: 0.6s;
+    }
+
+    .control-panel-icon {
+        width: 30px;
+        height: 30px;
+        margin-right: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    span:hover {
+        background-color: #7775c8;
+        color: white;
+    }
+
+    .emp-notify-content-sub {
+        font-size: 13px;
+        font-weight: 500;
+        color: black;
+        transition: 0.7s;
+    }
+
+    .emp-notify-content-timestamp {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .emp-notify-content-date {
+        font-size: 12px;
+        font-weight: 500;
+        color: #696969;
+    }
+
+    .emp-notify-content-time {
+        font-size: 12px;
+        font-weight: 500;
+        color: #696969;
+    }
+
+    .emp-notify-panel-content:hover {
+        background-color: #e9f1f8;
+    }
+}

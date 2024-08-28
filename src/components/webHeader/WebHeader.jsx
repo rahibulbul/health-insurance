@@ -22,7 +22,7 @@ const WebHeader = () => {
   }, []);
   return (
     <>
-      <header>
+      <header className="web-header">
         <div className="header-logo">
           <img src={HeaderLogo} alt="header-logo" />
           <span className="title">

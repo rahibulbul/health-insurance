@@ -86,11 +86,12 @@ const ValidateSelect = ({
 
   const errorTextStyle = {
     position: "absolute",
-    bottom: "-20px",
+    bottom: "-18px",
+    marginLeft: "20px",
     left: "0",
     color: error ? "red" : "transparent",
     fontSize: "14px",
-    fontWeight: "500",
+    fontWeight: "400",
     margin: "0",
     padding: "0",
     lineHeight: "1",

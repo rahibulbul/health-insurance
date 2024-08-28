@@ -11,6 +11,10 @@ import ScrollToTop from "./ScrollToTop";
 import WebHeader from "./components/webHeader/WebHeader";
 import WebFooter from "./components/webFooter/WebFooter";
 
+// Components from emp dashboard
+import EmpHeader from "./components/empHeader/EmpHeader";
+import EmpSidebar from "./components/empSidebar/EmpSidebar";
+
 // Webpages
 import Home from "./pages/webpage/home/Home";
 import Login from "./pages/webpage/login/Login";
@@ -42,6 +46,8 @@ const NoFooterWebPageLayout = ({ children }) => (
 const DashboardLayout = ({ children }) => (
   <>
     <ScrollToTop />
+    <EmpHeader />
+    <EmpSidebar />
     {children}
   </>
 );
@@ -74,7 +80,7 @@ const AppRoutes = () => (
         }
       />
       <Route
-        path="/emp-dashboard/*"
+        path="/empDashboard/*"
         element={
           <DashboardLayout>
             <Routes>
@@ -84,7 +90,7 @@ const AppRoutes = () => (
         }
       />
       <Route
-        path="/user-dashboard/*"
+        path="/userDashboard/*"
         element={
           <DashboardLayout>
             <Routes>

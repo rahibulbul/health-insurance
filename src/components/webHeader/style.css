@@ -1,4 +1,4 @@
-header {
+.web-header {
     position: fixed;
     top: 0;
     width: 100%;
@@ -13,7 +13,7 @@ header {
     z-index: 999999999999;
 }
 
-header.sticky {
+.web-header.sticky {
     background: #fff;
     height: 80px;
     box-shadow: 0px 80px 50px -30px rgba(0, 0, 0, 0.15);
@@ -59,14 +59,14 @@ header.sticky {
     }
 }
 
-header ul {
+.web-header ul {
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
 }
 
-header ul li {
+.web-header ul li {
     display: flex;
     align-items: center;
     justify-content: space-around;
