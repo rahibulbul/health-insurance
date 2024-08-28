@@ -1,0 +1,6 @@
+.emp-container {
+    padding: 10px;
+    height: calc(100% - 70px);
+    box-sizing: border-box;
+    background-color: white;
+}

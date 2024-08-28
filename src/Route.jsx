@@ -52,6 +52,19 @@ const DashboardLayout = ({ children }) => (
   </>
 );
 
+const EmpDashboardLayout = ({ children }) => (
+  <>
+    <ScrollToTop />
+    <div className="dashboard-layout">
+      <EmpHeader />
+      <div className="dashboard-content">
+        <EmpSidebar />
+        <main className="main-content">{children}</main>
+      </div>
+    </div>
+  </>
+);
+
 const AppRoutes = () => (
   <Router>
     <Routes>
@@ -82,11 +95,11 @@ const AppRoutes = () => (
       <Route
         path="/empDashboard/*"
         element={
-          <DashboardLayout>
+          <EmpDashboardLayout>
             <Routes>
               <Route index element={<EmpHome />} />
             </Routes>
-          </DashboardLayout>
+          </EmpDashboardLayout>
         }
       />
       <Route

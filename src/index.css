@@ -153,3 +153,32 @@
 .emp-container {
     margin-top: 70px;
 }
+
+/* Dashboard content */
+.dashboard-layout {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+/* .header {
+    flex-shrink: 0;
+} */
+
+.dashboard-content {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+}
+
+/* .sidebar {
+    width: 300px;
+    flex-shrink: 0;
+    overflow-y: auto;
+} */
+
+.main-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 10px;
+}
